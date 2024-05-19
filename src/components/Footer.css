@@ -1,0 +1,35 @@
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  left: 0; /* Ensure the footer starts from the leftmost side */
+  right: 0; /* Ensure the footer ends at the rightmost side */
+  bottom: 0;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%; /* Ensure the footer spans the full width */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: 6px;
+    font-size: 12px;
+  }
+}
+
+/* Additional adjustment for very small devices */
+@media (max-width: 375px) {
+  .footer {
+    padding: 5px;
+    font-size: 10px;
+  }
+}

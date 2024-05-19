@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import Header from './components/Header';
+import Inspiration from './components/Inspiration';
+import Generator from './components/Generator';
+import Footer from './components/Footer';
+import AIArtGenerator from './components/Aigenerator';
+import TextGenerate from './pages/TextGenerate';
 import './App.css';
 
 function App() {
   return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}
+
+function AppContent() {
+  const location = useLocation();
+  const isTextGeneratePage = location.pathname === '/text-generate';
+
+  return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!isTextGeneratePage && <Header />}
+      <main>
+        <Routes>
+          <Route path="/" element={<AIArtGenerator />} />
+          <Route path="/text-generate" element={<TextGenerate />}
+        
+          />
+        </Routes>
+        {!isTextGeneratePage && <Inspiration />}
+        {/* {!isTextGeneratePage && <Generator />} */}
+      </main>
+      {!isTextGeneratePage && <Footer />}
+
     </div>
   );
 }

@@ -1,0 +1,116 @@
+.header {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9));
+  color: rgb(241, 8, 8);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap; /* Allow wrapping */
+}
+
+.header h1 {
+  font-family: "Audiowide", sans-serif !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-size: 28px;
+  line-height: 36px;
+  text-align: center;
+  padding: 20px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #E67050 0%, #DB2268 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin: 0;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping */
+}
+
+.header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping */
+}
+
+.header nav ul li {
+  margin-left: 20px;
+  position: relative;
+  padding: 20px;
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #222222;
+}
+
+.header nav ul li::after {
+  content: '▼';
+  font-size: 12px;
+  position: absolute;
+  right: -15px;
+  top: 25px;
+}
+
+.header .sign-in {
+  background: linear-gradient(90deg, #E67050 0%, #DB2268 100%);
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Align items to the start */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .header nav ul {
+    flex-direction: column; /* Stack nav items vertically */
+    padding: 0; /* Reset padding */
+  }
+
+  .header nav ul li {
+    margin: 5px 0; /* Adjust margins */
+    padding: 10px; /* Adjust padding */
+    width: 100%; /* Make nav items full width */
+  }
+
+  .header nav ul li::after {
+    display: none; /* Hide the dropdown arrow */
+  }
+
+  .header nav ul li a {
+    font-size: 14px; /* Reduce font size */
+    line-height: 20px; /* Adjust line height */
+  }
+
+  .header .sign-in {
+    width: 75%; /* Full width button */
+    /* padding: 10px 20px; Adjust padding */
+    font-size: 16px; /* Adjust font size */
+    line-height: 24px; /* Adjust line height */
+    margin-top: 10px; /* Add margin between sign-in button and other items */
+  }
+}
+
