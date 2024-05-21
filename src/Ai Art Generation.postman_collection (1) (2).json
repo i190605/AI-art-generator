@@ -27,10 +27,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://api1.cognise.art/api/mobile/assessment?pagination=50&hit_point=mobile",
+							"raw": "https://api2.cognise.art/api/mobile/assessment?pagination=50&hit_point=mobile",
 							"protocol": "https",
 							"host": [
-								"api1",
+								"api2",
 								"cognise",
 								"art"
 							],
