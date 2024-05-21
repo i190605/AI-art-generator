@@ -13,7 +13,7 @@ const inspirations = [
 
 function Inspiration() {
   const [activeCategory, setActiveCategory] = useState(inspirations[0].name);
-  const [inspiration, setInspiration] = useState([]);
+  const [assets, setAssets] = useState([]);
 
   useEffect(() => {
     fetchImages();
@@ -22,7 +22,7 @@ function Inspiration() {
   const fetchImages = async () => {
     try {
       const response = await fetch(
-        "https://api2.cognise.art/api/mobile/assessment?format=json&hit_point=mobile&pagination=50"
+        `${config.baseUrl}/api/mobile/assessment?format=json&hit_point=mobile&pagination=50`
       );
 
       if (!response.ok) {
@@ -31,7 +31,7 @@ function Inspiration() {
       const data = await response.json();
       console.log(data);
 
-      setInspiration(data.data);
+      setAssets(data.data);
     } catch (error) {
       console.error("Error fetching images:", error);
     }
@@ -56,10 +56,10 @@ function Inspiration() {
         ))}
       </div>
       <div className="image-grid">
-        {inspiration.map((image, index) => (
+        {assets.map((asset, index) => (
           <div key={index} className="image-card">
-            <img src={image.src} alt={image.alt} />
-            <p>{image.alt}</p>
+            <img src={`${config.baseUrl}/${asset.images[0].image}`} />
+            <p>{asset.generation_info.prompt}</p>
           </div>
         ))}
       </div>
