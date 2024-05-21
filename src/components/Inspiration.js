@@ -60,6 +60,7 @@ function Inspiration() {
           <div key={index} className="image-card">
             <img src={`${config.baseUrl}/${asset.images[0].image}`} />
             <p>{asset.generation_info.prompt}</p>
+            <div className="image-overlay">{asset.alt}</div>
           </div>
         ))}
       </div>

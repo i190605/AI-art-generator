@@ -3,7 +3,7 @@
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 10px; /* Fixed negative padding */
+  padding: 10px;
 }
 
 .inspiration-title h2 {
@@ -13,7 +13,7 @@
   color: #191717;
   margin: 0;
   padding: 50px;
-  text-align: center; /* Center the title for better responsiveness */
+  text-align: center;
 }
 
 .categories {
@@ -21,7 +21,7 @@
   justify-content: center;
   gap: 24px;
   margin-bottom: 20px;
-  flex-wrap: wrap; /* Allow wrapping for better responsiveness */
+  flex-wrap: wrap;
 }
 
 .category-btn {
@@ -42,8 +42,8 @@
 }
 
 .category-btn.active {
-  background: linear-gradient(90deg, #E67050 0%, #DB2268 100%);
-  color: #FFFFFF;
+  background: linear-gradient(90deg, #e67050 0%, #db2268 100%);
+  color: #ffffff;
   border: none;
 }
 
@@ -61,11 +61,11 @@
     line-height: 50px;
     padding: 40px;
   }
-  
+
   .categories {
     gap: 16px;
   }
-  
+
   .category-btn {
     padding: 10px 25px;
     font-size: 18px;
@@ -83,13 +83,13 @@
   .categories {
     gap: 12px;
   }
-  
+
   .category-btn {
     padding: 8px 20px;
     font-size: 16px;
     height: 48px;
   }
-  
+
   .image-grid {
     grid-template-columns: repeat(3, minmax(150px, 1fr));
   }
@@ -126,7 +126,7 @@
 
   .categories {
     gap: 8px;
-    flex-direction: column; /* Stack the buttons vertically */
+    flex-direction: column;
   }
 
   .category-btn {
@@ -141,15 +141,30 @@
 }
 
 .image-card {
+  position: relative;
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 0;
   background: white;
   border-radius: 8px;
+  overflow: hidden;
   text-align: center;
 }
 
 .image-card img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  display: block;
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 0 0 8px 8px;
+  box-sizing: border-box;
 }
