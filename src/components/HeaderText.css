@@ -1,131 +1,201 @@
 /* Ensure the body takes full height and the content is centered */
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-    overflow-x: hidden;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 60px; /* Ensure content is not hidden under the fixed header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px; /* Ensure content is not hidden under the fixed header */
 }
 
 .container {
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 20px;
-    box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9));
-    color: rgb(241, 8, 8);
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    backdrop-filter: blur(5px);
-    border-bottom: 1px solid #ddd;
-    flex-wrap: wrap;
-    z-index: 1000; /* Ensure header is above other content */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.9)
+  );
+  color: rgb(241, 8, 8);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+  z-index: 1000; /* Ensure header is above other content */
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    font-family: "Audiowide", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    background: linear-gradient(90deg, #E67050 0%, #DB2268 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: linear-gradient(90deg, #e67050 0%, #db2268 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .nav {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
-.nav-button {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+.nav .menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
-.nav-button:hover {
-    background-color: #f0f0f0;
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.nav-button.active {
-    background-color: #E67050;
-    color: #fff;
-    border-color: #ff4081;
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+  color: #222;
+  border-radius: 4px;
+}
+
+.nav-links a:hover {
+  background-color: #e0e0e0;
+}
+
+.nav-links .active {
+  background-color: #ff7043;
+  color: #ffffff;
+  border-color: #ff4081;
 }
 
 .profile {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .profile-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 @media (max-width: 600px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .logo {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
+  .logo {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
 
-    .nav {
-        flex-direction: column;
-        gap: 5px;
-        width: 100%;
-    }
+  .nav {
+    width: 100%;
+    text-align: center;
+  }
 
-    .nav-button {
-        width: 100%;
-        text-align: center;
-    }
+  .nav .menu-icon {
+    display: block;
+  }
 
-    .profile {
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-    }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 375px) {
-    .logo {
-        font-size: 18px;
-    }
+  .logo {
+    font-size: 18px;
+  }
 
-    .nav-button {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
+  .nav-links a {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
 
-    .profile-icon {
-        width: 35px;
-        height: 35px;
-    }
+  .profile-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* New styles to match the button appearance in the image */
+.nav-links .button {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 0 4px;
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links .button.active {
+  background-color: #ff7043;
+  color: white;
+}
+
+.nav-links .button:hover {
+  background-color: #e0e0e0;
+}
+
+.nav-links .button.disabled {
+  background-color: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import './HeaderText.css';
+import React from "react";
+import "./HeaderText.css";
 
 const TextHeader = () => {
   return (
@@ -7,12 +7,21 @@ const TextHeader = () => {
       <div className="logo">
         <span>ART GENERATOR</span>
       </div>
-      <nav className="nav">
-        <button className="nav-button active">Text to Image</button>
-        <button className="nav-button">Image to Image</button>
-        <button className="nav-button">AI Avatar</button>
-        <button className="nav-button">Face Swap</button>
-      </nav>
+      <div class="nav-links">
+        <a href="#" class="button active">
+          Text to Image
+        </a>
+        <a href="#" class="button disabled">
+          Image to Image
+        </a>
+        <a href="#" class="button disabled">
+          AI Avatar
+        </a>
+        <a href="#" class="button disabled">
+          Face Swap
+        </a>
+      </div>
+
       <div className="profile">
         <img src="profile.png" alt="Profile Icon" className="profile-icon" />
       </div>

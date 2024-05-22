@@ -1,41 +1,40 @@
-import React, { useEffect } from 'react';
-import TextHeader from '../components/HeaderText'; // Adjust the path if necessary
-import './TextGenerate.css'; // Ensure your CSS file is imported
-
+import TextHeader from "../components/HeaderText"; // Adjust the path if necessary
+import "./TextGenerate.css"; // Ensure your CSS file is imported
+import React, { useEffect } from "react";
 const TextGenerate = () => {
   useEffect(() => {
     // Left Side Navigation
-    const sideNavLeft = document.createElement('div');
-    sideNavLeft.id = 'side-nav-left';
+    const sideNavLeft = document.createElement("div");
+    sideNavLeft.id = "side-nav-left";
 
-    const myCreations = document.createElement('div');
-    myCreations.id = 'my-creations';
-    myCreations.textContent = 'My Creations';
+    const myCreations = document.createElement("div");
+    myCreations.id = "my-creations";
+    myCreations.textContent = "My Creations";
 
-    const dividerLeft = document.createElement('div');
-    dividerLeft.classList.add('divider');
+    const dividerLeft = document.createElement("div");
+    dividerLeft.classList.add("divider");
 
     // List of landscape images
     const creations = [
-      'https://images.unsplash.com/photo-1587502536263-3ff9b9f36cd7?fit=crop&w=600&h=400&q=80',
-      'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=600&h=400&q=80',
-      'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=600&h=400&q=80',
-      'https://images.unsplash.com/photo-1604850802744-5114b9c675ff?fit=crop&w=600&h=400&q=80'
+      "https://images.unsplash.com/photo-1587502536263-3ff9b9f36cd7?fit=crop&w=600&h=400&q=80",
+      "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=600&h=400&q=80",
+      "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=600&h=400&q=80",
+      "https://images.unsplash.com/photo-1604850802744-5114b9c675ff?fit=crop&w=600&h=400&q=80",
     ];
 
     sideNavLeft.appendChild(myCreations);
     sideNavLeft.appendChild(dividerLeft);
 
-    creations.forEach(image => {
-      const creation = document.createElement('div');
-      creation.classList.add('creation');
+    creations.forEach((image) => {
+      const creation = document.createElement("div");
+      creation.classList.add("creation");
       creation.style.backgroundImage = `url(${image})`;
       sideNavLeft.appendChild(creation);
     });
 
     // Right Side Navigation
-    const sideNavRight = document.createElement('div');
-    sideNavRight.id = 'side-nav-right';
+    const sideNavRight = document.createElement("div");
+    sideNavRight.id = "side-nav-right";
 
     // Content for the right side navigation
     const rightContentHTML = `
@@ -87,7 +86,10 @@ const TextGenerate = () => {
       <TextHeader />
       <div className="text-generate-content">
         <div className="center-picture">
-          <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=800&h=600&q=80" alt="Center" />
+          <img
+            src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=800&h=600&q=80"
+            alt="Center"
+          />
         </div>
       </div>
     </div>
