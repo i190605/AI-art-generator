@@ -1,6 +1,7 @@
+import React, { useEffect } from "react";
 import TextHeader from "../components/HeaderText"; // Adjust the path if necessary
 import "./TextGenerate.css"; // Ensure your CSS file is imported
-import React, { useEffect } from "react";
+
 const TextGenerate = () => {
   useEffect(() => {
     // Left Side Navigation
