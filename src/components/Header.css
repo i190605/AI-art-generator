@@ -67,12 +67,29 @@
   color: #222222;
 }
 
-.header nav ul li::after {
-  content: "▼";
-  font-size: 12px;
+.header nav ul li .dropdown {
+  display: none;
   position: absolute;
-  right: -15px;
-  top: 25px;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.header nav ul li .dropdown li {
+  margin: 0;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+.header nav ul li .dropdown li a {
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+.header nav ul li:hover .dropdown,
+.header nav ul li .dropdown.active {
+  display: block;
 }
 
 .header .sign-in {
@@ -128,13 +145,12 @@
     width: 100%; /* Full width nav items */
   }
 
-  .header nav ul li::after {
-    display: none; /* Hide the dropdown arrow */
+  .header nav ul li .dropdown {
+    position: static;
   }
 
-  .header nav ul li a {
-    font-size: 14px; /* Reduce font size */
-    line-height: 20px; /* Adjust line height */
+  .header nav ul li .dropdown li a {
+    padding: 0.5rem;
   }
 
   .header .sign-in {
